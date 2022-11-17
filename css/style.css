@@ -1,0 +1,43 @@
+* {
+    text-align: center;
+}
+
+body {
+    background-image: url(/img/background.png);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    width: 400px;
+    margin: auto;
+    background-color: orangered;
+}
+
+.title {
+    grid-column: 1/4;
+}
+
+.bot-button {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.bot-button > p {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.vs-button {
+    grid-column: 2;
+    grid-row: 3
+}
+
+.vs-button > p {
+    
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
