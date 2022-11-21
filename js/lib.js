@@ -65,6 +65,28 @@ function win() {
     }
 }
 
+function reset() {
+    myBtn1.innerHTML = ' ';
+    box1 = 0;
+    myBtn2.innerHTML = ' ';
+    box2 = 0;
+    myBtn3.innerHTML = ' ';
+    box3 = 0;
+    myBtn4.innerHTML = ' ';
+    box4 = 0;
+    myBtn5.innerHTML = ' ';
+    box5 = 0;
+    myBtn6.innerHTML = ' ';
+    box6 = 0;
+    myBtn7.innerHTML = ' ';
+    box7 = 0;
+    myBtn8.innerHTML = ' ';
+    box8 = 0;
+    myBtn9.innerHTML = ' ';
+    box9 = 0;
+    playerTurn = 1;
+}
+
 
 
 

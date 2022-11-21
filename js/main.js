@@ -8,7 +8,8 @@ let box7 = 0;
 let box8 = 0;
 let box9 = 0;
 
-let playerTurn = 1
+let playerTurn = 1;
+
 
 const myBtn1 = document.querySelector(".box1");
 const myBtn2 = document.querySelector(".box2");
@@ -19,6 +20,7 @@ const myBtn6 = document.querySelector(".box6");
 const myBtn7 = document.querySelector(".box7");
 const myBtn8 = document.querySelector(".box8");
 const myBtn9 = document.querySelector(".box9");
+const playerWon = document.querySelector(".reset");
 
 myBtn1.addEventListener('click', button1);
 myBtn2.addEventListener('click', button2);
@@ -29,6 +31,7 @@ myBtn6.addEventListener('click', button6);
 myBtn7.addEventListener('click', button7);
 myBtn8.addEventListener('click', button8);
 myBtn9.addEventListener('click', button9);
+playerWon.addEventListener('click', reset)
 
 
 
