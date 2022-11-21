@@ -44,3 +44,16 @@ body {
     background-color: rgb(54, 54, 54);
     color: red;
 }
+
+
+.cross {
+    width: 140px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.circle {
+    width: 140px;
+    padding: 20px;
+    margin-top: 10px;
+}
