@@ -33,12 +33,36 @@ body {
 
 .vs-button {
     grid-column: 2;
-    grid-row: 3
+    grid-row: 3;
 }
 
-.vs-button > p {
-    
+.vs-button > a {
     background-color: black;
     color: white;
     padding: 10px;
+    padding-left: 55px;
+    padding-right: 55px;
+    text-decoration: none;
+}
+
+.easy, .hard {
+    visibility: hidden;
+}
+
+.easy > a {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-decoration: none;
+}
+
+.hard > a {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-decoration: none;
 }

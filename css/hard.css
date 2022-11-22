@@ -1,0 +1,103 @@
+* {     
+    text-align: center;
+    font-family:Verdana;
+}
+
+body {
+    background-image: url(/img/background.png);
+}
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(6, 100px);
+    width: 800px;
+    margin: auto;
+    background-color: orangered;
+}
+
+.boxes {
+    display: grid;
+    grid-column: 3/8;
+    grid-row: 2/4;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 148px);
+}
+
+.box1 , .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9{
+    border: solid black 2px;
+    background-color: white;
+    
+}
+.box1:hover , .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover, .box8:hover, .box9:hover {
+    cursor:crosshair;
+}
+
+.player-1-points {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    border: solid black 1px;
+    background-color: rgb(54, 54, 54);
+    color: red;
+    font-size: 85px;
+    user-select: none;
+}
+
+.player-2-points {
+    grid-column: 8/9;
+    grid-row: 2/3;
+    border: solid black 1px;
+    background-color: rgb(54, 54, 54);
+    color: red;
+    font-size: 85px;
+    user-select: none;
+}
+
+
+.cross {
+    width: 100px;
+    padding: 20px;
+    margin-top: 10px;
+    user-select: none;
+}
+
+.circle {
+    width: 100px;
+    padding: 20px;
+    margin-top: 10px;
+    user-select: none;
+}
+
+.reset {
+    grid-column: 4/7;
+    grid-row: 1/2;
+    background-color: #262626;
+    border: solid black 1px;
+    font-size: 60px;
+    padding: 8px;
+    user-select: none;
+    color: red;
+}
+.reset:hover {
+   cursor:grabbing; 
+}
+
+.who-won {
+    background-color:rgb(66, 66, 66);
+    border: solid black 5px;
+    width: 445px;
+    height: 445px;
+    visibility: hidden;
+    position: absolute;
+}
+
+.who-won2 {
+    background-color: rgb(192, 3, 3);
+    width: 441px;
+    height: 100px;
+    border: solid black 2px;
+    margin-top: 160px;
+    font-size: 75px;
+    
+}
