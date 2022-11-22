@@ -1,68 +1,45 @@
+function crossWon() {
+    playerOnePoints++;
+    plr1P.innerHTML = playerOnePoints;
+    console.log("cross won")
+    whoWon.style.visibility = "visible";
+    whoWon2.innerHTML = "cross won"
+}
+
+function circleWon() {
+    playerTwoPoints++;
+    plr2P.innerHTML = playerTwoPoints;
+    console.log("cirlce won")
+    whoWon.style.visibility = "visible";
+    whoWon2.innerHTML = "circle won"
+}
+
+
 function win() {
     //row 1H
-    if (box1 == 1 && box2 == 1 && box3 == 1) {
-        alert("cross won")
-    }
-    else if (box1 == 2 && box2 == 2 && box3 == 2) {
-        alert("circle won")
-    }
-
+    if (box1 == 1 && box2 == 1 && box3 == 1) {crossWon()}
+    else if (box1 == 2 && box2 == 2 && box3 == 2) {circleWon()}
     //row 2H
-    else if (box4 == 1 && box5 == 1 && box6 == 1) {
-        alert("cross won")
-    }
-    else if (box4 == 2 && box5 == 2 && box6 == 2) {
-        alert("circle won")
-    }
-
+    else if (box4 == 1 && box5 == 1 && box6 == 1) {crossWon()}
+    else if (box4 == 2 && box5 == 2 && box6 == 2) {circleWon()}
     //row 3H
-    else if (box7 == 1 && box8 == 1 && box9 == 1) {
-        alert("cross won")
-    }
-    else if (box7 == 2 && box8 == 2 && box9 == 2) {
-        alert("circle won")
-    }
-
+    else if (box7 == 1 && box8 == 1 && box9 == 1) {crossWon()}
+    else if (box7 == 2 && box8 == 2 && box9 == 2) {circleWon()}
     //row 1V
-    else if (box1 == 1 && box4 == 1 && box7 == 1) {
-        alert("cross won")
-    }
-    else if (box1 == 2 && box4 == 2 && box7 == 2) {
-        alert("circle won")
-    }
-
+    else if (box1 == 1 && box4 == 1 && box7 == 1) {crossWon()}
+    else if (box1 == 2 && box4 == 2 && box7 == 2) {circleWon()}
     //row 2V
-    else if (box2 == 1 && box5 == 1 && box8 == 1) {
-        alert("cross won")
-    }
-    else if (box2 == 2 && box5 == 2 && box8 == 2) {
-        alert("circle won")
-    }
-
+    else if (box2 == 1 && box5 == 1 && box8 == 1) {crossWon()}
+    else if (box2 == 2 && box5 == 2 && box8 == 2) {circleWon()}
     //row 3V
-    else if (box3 == 1 && box6 == 1 && box9 == 1) {
-        alert("cross won")
-    }
-    else if (box3 == 2 && box6 == 2 && box9 == 2) {
-        alert("circle won")
-    }
-
-
+    else if (box3 == 1 && box6 == 1 && box9 == 1) {crossWon()}
+    else if (box3 == 2 && box6 == 2 && box9 == 2) {circleWon()}
     //row 1D
-    else if (box1 == 1 && box5 == 1 && box9 == 1) {
-        alert("cross won")
-    }
-    else if (box1 == 2 && box5 == 2 && box9 == 2) {
-        alert("circle won")
-    }
-
-    //row 1D
-    else if (box3 == 1 && box5 == 1 && box7 == 1) {
-        alert("cross won")
-    }
-    else if (box3 == 2 && box5 == 2 && box7 == 2) {
-        alert("circle won")
-    }
+    else if (box1 == 1 && box5 == 1 && box9 == 1) {crossWon()}
+    else if (box1 == 2 && box5 == 2 && box9 == 2) {circleWon()}
+    //row 2D
+    else if (box3 == 1 && box5 == 1 && box7 == 1) {crossWon()}
+    else if (box3 == 2 && box5 == 2 && box7 == 2) {circleWon()}
 }
 
 function reset() {
@@ -85,12 +62,13 @@ function reset() {
     myBtn9.innerHTML = ' ';
     box9 = 0;
     playerTurn = 1;
+    whoWon.style.visibility = "hidden";
 }
 
 
 
 
-function button1() {
+function button1() { 
     if (box1 == 0) { 
         if (playerTurn == 1) {
         myBtn1.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';

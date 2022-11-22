@@ -8,6 +8,7 @@ let box7 = 0;
 let box8 = 0;
 let box9 = 0;
 
+
 let playerTurn = 1;
 
 
@@ -21,6 +22,11 @@ const myBtn7 = document.querySelector(".box7");
 const myBtn8 = document.querySelector(".box8");
 const myBtn9 = document.querySelector(".box9");
 const playerWon = document.querySelector(".reset");
+const plr1P = document.querySelector(".player-1-points");
+const plr2P = document.querySelector(".player-2-points");
+const whoWon = document.querySelector(".who-won");
+const whoWon2 = document.querySelector(".who-won2");
+
 
 myBtn1.addEventListener('click', button1);
 myBtn2.addEventListener('click', button2);
@@ -33,6 +39,9 @@ myBtn8.addEventListener('click', button8);
 myBtn9.addEventListener('click', button9);
 playerWon.addEventListener('click', reset)
 
-
+let playerOnePoints = 0;
+plr1P.innerHTML = playerOnePoints;
+let playerTwoPoints = 0;
+plr2P.innerHTML = playerTwoPoints;
 
 
