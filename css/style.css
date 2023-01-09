@@ -4,20 +4,26 @@
 }
 
 body {
-    background-image: url(/img/background.png);
+    background-image: url(/img/menu.jpg);
+    background-size: 100%;
 }
 
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 100px);
-    width: 400px;
+    grid-template-rows: 200px repeat(3, 100px);
+    width: 600px;
     margin: auto;
-    background-color: orangered;
 }
 
 .title {
     grid-column: 1/4;
+}
+
+.title > h1 {
+    font-size: 80px;
+    color: #3f3e3e;
+    text-shadow: 2px 2px white;
 }
 
 .bot-button {
@@ -25,10 +31,15 @@ body {
     grid-row: 2;
 }
 
-.bot-button > p {
-    background-color: black;
+.button > a {
+    background-color: #808080;
     color: white;
+    text-decoration: none;
     padding: 10px;
+    border: #3f3e3e solid 3px;
+    font-size: 50px;
+    border-top: #b6b6b6 solid 3px;
+    border-left: #b6b6b6 solid 3px;
 }
 
 .vs-button {
@@ -36,33 +47,3 @@ body {
     grid-row: 3;
 }
 
-.vs-button > a {
-    background-color: black;
-    color: white;
-    padding: 10px;
-    padding-left: 55px;
-    padding-right: 55px;
-    text-decoration: none;
-}
-
-.easy, .hard {
-    visibility: hidden;
-}
-
-.easy > a {
-    background-color: black;
-    color: white;
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-    text-decoration: none;
-}
-
-.hard > a {
-    background-color: black;
-    color: white;
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-    text-decoration: none;
-}

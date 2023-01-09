@@ -15,6 +15,27 @@ function circleWon() {
 }
 
 
+function botStart() {
+    if (box5 == 1) {
+        myBtn3.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
+        box3 = 2
+    }
+    else {
+        myBtn5.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
+        box5 = 2 
+    }
+}
+
+
+
+function bot() {
+    if (turn == 1) {
+        botStart()
+        turn++;
+        console.log("bot")
+    }
+}
+
 function win() {
     //row 1H
     if (box1 == 1 && box2 == 1 && box3 == 1) {crossWon()}
@@ -74,11 +95,7 @@ function button1() {
         myBtn1.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
         playerTurn = 2;
         box1 = 1
-        }
-        else if (playerTurn == 2) {
-        myBtn1.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        playerTurn = 1;
-        box1 = 2
+        bot()
         }
     }
     win()

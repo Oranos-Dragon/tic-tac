@@ -26,6 +26,9 @@ const plr1P = document.querySelector(".player-1-points");
 const plr2P = document.querySelector(".player-2-points");
 const whoWon = document.querySelector(".who-won");
 const whoWon2 = document.querySelector(".who-won2");
+const playerOneName = document.querySelector(".player-one-name");
+const playertwoName = document.querySelector(".player-two-name");
+const scoreboard = document.querySelector(".score");
 
 
 myBtn1.addEventListener('click', button1);
@@ -44,4 +47,4 @@ plr1P.innerHTML = playerOnePoints;
 let playerTwoPoints = 0;
 plr2P.innerHTML = playerTwoPoints;
 
-
+let players = []

@@ -213,3 +213,16 @@ function button9() {
     win()
 }
 
+function playerOne() {
+    const name1 = playerOneName.value;
+    checkPlayerNames(name1);
+    for (let i = 0; i < players.length; i++) {
+        scoreboard.innerHTML += "<li>" + players[i] + "</li>"
+    }
+}
+
+function checkPlayerNames(name) {
+    if (!players.includes(name)) {
+        players.push(name);
+    }
+}

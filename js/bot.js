@@ -8,6 +8,8 @@ let box7 = 0;
 let box8 = 0;
 let box9 = 0;
 
+let turn = 0
+
 
 let playerTurn = 1;
 
