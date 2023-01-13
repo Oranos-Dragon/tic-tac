@@ -1,232 +1,129 @@
+function start() {
+    playerOnePoints = parseInt(playerPoints);
+    playerTwoPoints = parseInt(botPoints);
+    playerOneName.value = playerName;
+    plr1P.innerHTML = playerOnePoints;
+    plr2P.innerHTML = playerTwoPoints;
+    saveNames()
+}
+
 function crossWon() {
     playerOnePoints++;
     plr1P.innerHTML = playerOnePoints;
     console.log("cross won")
     whoWon.style.visibility = "visible";
-    whoWon2.innerHTML = "cross won"
+    whoWon2.innerHTML = name1 + " won"
+    savePoints()
 }
 
 function circleWon() {
     playerTwoPoints++;
     plr2P.innerHTML = playerTwoPoints;
-    console.log("cirlce won")
+    console.log("cirlce won");
     whoWon.style.visibility = "visible";
-    whoWon2.innerHTML = "circle won"
+    whoWon2.innerHTML = " Bot won";
+    savePoints()
 }
-
-
-function botStart() {
-    if (box5 == 1) {
-        myBtn3.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        box3 = 2
-    }
-    else {
-        myBtn5.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        box5 = 2 
-    }
-}
-
-
 
 function bot() {
-    if (turn == 1) {
-        botStart()
-        turn++;
-        console.log("bot")
+    if (turn < 4) {
+        rNum = Math.floor(Math.random() * 8);
+        if (!box[rNum] == 0) {
+            bot();
+        }
+        if (box[rNum] == 0) {
+            box[rNum] = 2;
+            myBtn[rNum].innerHTML = '<img src="/img/circle.png" alt="cirlce" class="circle"></img>'
+            console.log("turn " + turn)
+        }
     }
 }
 
 function win() {
     //row 1H
-    if (box1 == 1 && box2 == 1 && box3 == 1) {crossWon()}
-    else if (box1 == 2 && box2 == 2 && box3 == 2) {circleWon()}
+    if (box[0] == 1 && box[1] == 1 && box[2] == 1) {crossWon()}
+    else if (box[0] == 2 && box[1] == 2 && box[2] == 2) {circleWon()}
     //row 2H
-    else if (box4 == 1 && box5 == 1 && box6 == 1) {crossWon()}
-    else if (box4 == 2 && box5 == 2 && box6 == 2) {circleWon()}
+    else if (box[3] == 1 && box[4] == 1 && box[5] == 1) {crossWon()}
+    else if (box[3] == 2 && box[4] == 2 && box[5] == 2) {circleWon()}
     //row 3H
-    else if (box7 == 1 && box8 == 1 && box9 == 1) {crossWon()}
-    else if (box7 == 2 && box8 == 2 && box9 == 2) {circleWon()}
+    else if (box[6] == 1 && box[7] == 1 && box[8] == 1) {crossWon()}
+    else if (box[6] == 2 && box[7] == 2 && box[8] == 2) {circleWon()}
     //row 1V
-    else if (box1 == 1 && box4 == 1 && box7 == 1) {crossWon()}
-    else if (box1 == 2 && box4 == 2 && box7 == 2) {circleWon()}
+    else if (box[0] == 1 && box[3] == 1 && box[6] == 1) {crossWon()}
+    else if (box[0] == 2 && box[3] == 2 && box[6] == 2) {circleWon()}
     //row 2V
-    else if (box2 == 1 && box5 == 1 && box8 == 1) {crossWon()}
-    else if (box2 == 2 && box5 == 2 && box8 == 2) {circleWon()}
+    else if (box[1] == 1 && box[4] == 1 && box[7] == 1) {crossWon()}
+    else if (box[1] == 2 && box[4] == 2 && box[7] == 2) {circleWon()}
     //row 3V
-    else if (box3 == 1 && box6 == 1 && box9 == 1) {crossWon()}
-    else if (box3 == 2 && box6 == 2 && box9 == 2) {circleWon()}
+    else if (box[2] == 1 && box[5] == 1 && box[8] == 1) {crossWon()}
+    else if (box[2] == 2 && box[5] == 2 && box[8] == 2) {circleWon()}
     //row 1D
-    else if (box1 == 1 && box5 == 1 && box9 == 1) {crossWon()}
-    else if (box1 == 2 && box5 == 2 && box9 == 2) {circleWon()}
+    else if (box[0] == 1 && box[4] == 1 && box[8] == 1) {crossWon()}
+    else if (box[0] == 2 && box[4] == 2 && box[8] == 2) {circleWon()}
     //row 2D
-    else if (box3 == 1 && box5 == 1 && box7 == 1) {crossWon()}
-    else if (box3 == 2 && box5 == 2 && box7 == 2) {circleWon()}
+    else if (box[2] == 1 && box[4] == 1 && box[6] == 1) {crossWon()}
+    else if (box[2] == 2 && box[4] == 2 && box[6] == 2) {circleWon()}
+    else if (turn > 4) {
+        console.log("tied")
+        whoWon.style.visibility = "visible";
+        whoWon2.innerHTML = "tie";
+        savePoints()
+    }
 }
 
 function reset() {
-    myBtn1.innerHTML = ' ';
-    box1 = 0;
-    myBtn2.innerHTML = ' ';
-    box2 = 0;
-    myBtn3.innerHTML = ' ';
-    box3 = 0;
-    myBtn4.innerHTML = ' ';
-    box4 = 0;
-    myBtn5.innerHTML = ' ';
-    box5 = 0;
-    myBtn6.innerHTML = ' ';
-    box6 = 0;
-    myBtn7.innerHTML = ' ';
-    box7 = 0;
-    myBtn8.innerHTML = ' ';
-    box8 = 0;
-    myBtn9.innerHTML = ' ';
-    box9 = 0;
-    playerTurn = 1;
+    myBtn[0].innerHTML = ' ';
+    box[0] = 0;
+    myBtn[1].innerHTML = ' ';
+    box[1] = 0;
+    myBtn[2].innerHTML = ' ';
+    box[2] = 0;
+    myBtn[3].innerHTML = ' ';
+    box[3] = 0;
+    myBtn[4].innerHTML = ' ';
+    box[4] = 0;
+    myBtn[5].innerHTML = ' ';
+    box[5] = 0;
+    myBtn[6].innerHTML = ' ';
+    box[6] = 0;
+    myBtn[7].innerHTML = ' ';
+    box[7] = 0;
+    myBtn[8].innerHTML = ' ';
+    box[8] = 0;
+    turn = 0;
     whoWon.style.visibility = "hidden";
 }
 
-
-
-
-function button1() { 
-    if (box1 == 0) { 
-        if (playerTurn == 1) {
-        myBtn1.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
-        playerTurn = 2;
-        box1 = 1
+function button(num) { 
+    console.log(num)
+    if (box[num] == 0) { 
+        myBtn[num].innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
+        box[num] = 1
         bot()
-        }
+        turn++;
     }
     win()
 }
 
-function button2() {
-    if (box2 == 0) {
-        if (playerTurn == 1) {
-        myBtn2.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
-        playerTurn = 2;
-        box2 = 1
-        }
-        else if (playerTurn == 2) {
-        myBtn2.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        playerTurn = 1;
-        box2 = 2
-        }
-    }
-    win()
+function saveNames() {
+    name1 = playerOneName.value;
+    console.log(playerOneName.value)
+    document.querySelector(".name1").innerHTML = name1;
+    localStorage.setItem("player-name", playerOneName.value);//saves the player name
 }
 
-function button3() {
-    if (box3 == 0) {
-        if (playerTurn == 1) {
-        myBtn3.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
-        playerTurn = 2;
-        box3 = 1
-        }
-        else if (playerTurn == 2) {
-        myBtn3.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        playerTurn = 1;
-        box3 = 2
-        }
-    }
-    win()
-
+function savePoints() {
+    localStorage.setItem("player-points", playerOnePoints);//saves player one points
+    localStorage.setItem("bot-points", playerTwoPoints);//saves bot points
 }
 
-function button4() {
-    if (box4 == 0) {
-        if (playerTurn == 1) {
-        myBtn4.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
-        playerTurn = 2;
-        box4 = 1
-        }
-        else if (playerTurn == 2) {
-        myBtn4.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        playerTurn = 1;
-        box4 = 2
-        }
-    }
-    win()
+function restart() {
+    localStorage.clear()
+    playerOnePoints = 0
+    playerTwoPoints = 0
+    plr1P.innerHTML = playerOnePoints;
+    plr2P.innerHTML = playerTwoPoints;
+    saveNames()
+    savePoints()
 }
-
-function button5() {
-    if (box5 == 0) {
-        if (playerTurn == 1) {
-        myBtn5.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
-        playerTurn = 2;
-        box5 = 1
-        }
-        else if (playerTurn == 2) {
-        myBtn5.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        playerTurn = 1;
-        box5 = 2
-        }
-    }
-    win()
-}
-
-function button6() {
-    if (box6 == 0) {
-        if (playerTurn == 1) {
-        myBtn6.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
-        playerTurn = 2;
-        box6 = 1
-        }
-        else if (playerTurn == 2) {
-        myBtn6.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        playerTurn = 1;
-        box6 = 2
-        }
-    }
-    win()
-}
-
-function button7() {
-    if (box7 == 0) {
-        if (playerTurn == 1) {
-        myBtn7.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
-        playerTurn = 2;
-        box7 = 1
-        }
-        else if (playerTurn == 2) {
-        myBtn7.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        playerTurn = 1;
-        box7 = 2
-        }
-    }
-    win()
-}
-
-function button8() {
-    if (box8 == 0) {
-        if (playerTurn == 1) {
-        myBtn8.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
-        playerTurn = 2;
-        box8 = 1
-        }
-        else if (playerTurn == 2) {
-        myBtn8.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        playerTurn = 1;
-        box8 = 2
-        }
-    }
-    win()
-}
-
-function button9() {
-    if (box9 == 0) {
-        if (playerTurn == 1) {
-        myBtn9.innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
-        playerTurn = 2;
-        box9 = 1
-        }
-        else if (playerTurn == 2) {
-        myBtn9.innerHTML = '<img src="/img/cirlce.png" alt="circle" class="circle">';
-        playerTurn = 1;
-        box9 = 2
-        }
-    }
-    win()
-}
-
