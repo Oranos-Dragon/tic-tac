@@ -33,7 +33,7 @@ function bot() {
         }
         if (box[rNum] == 0) {
             box[rNum] = 2;
-            myBtn[rNum].innerHTML = '<img src="/img/circle.png" alt="cirlce" class="circle"></img>'
+            myBtn[rNum].innerHTML = '<img src="img/circle.png" alt="cirlce" class="circle"></img>'
             console.log("turn " + turn)
         }
     }
@@ -98,7 +98,7 @@ function reset() {
 function button(num) { 
     console.log(num)
     if (box[num] == 0) { 
-        myBtn[num].innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
+        myBtn[num].innerHTML = '<img src="img/cross.png" alt="cross" class="cross"></img>';
         box[num] = 1
         bot()
         turn++;

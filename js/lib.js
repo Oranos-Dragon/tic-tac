@@ -88,12 +88,12 @@ function reset() {
 function button(num) { 
     if (box[num] == 0) { 
         if (playerTurn == 1) {
-        myBtn[num].innerHTML = '<img src="/img/cross.png" alt="cross" class="cross"></img>';
+        myBtn[num].innerHTML = '<img src="img/cross.png" alt="cross" class="cross"></img>';
         playerTurn = 2;
         box[num] = 1
         }
         else if (playerTurn == 2) {
-        myBtn[num].innerHTML = '<img src="/img/circle.png" alt="cirlce" class="circle"></img>';
+        myBtn[num].innerHTML = '<img src="img/circle.png" alt="cirlce" class="circle"></img>';
         playerTurn = 1;
         box[num] = 2
         }
